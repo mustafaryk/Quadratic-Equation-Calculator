@@ -62,11 +62,11 @@ def main():
         if operator_index[index][1] == '-':  # if coefficient was negative the resultant number must be too
             number = number * -1
         return number
-    
+
     def proof(x):  # proof of solution
         print('ax² + bx + c')
         print(f"{a} * {x}² + {b} * {x} + {c}")
-        print(f'{a * x ** 2} + {b * x} + {c}')
+        print(f'{round(a * x ** 2)} + {round(b * x)} + {c}')
         print('0')
 
     isolating_equation()
