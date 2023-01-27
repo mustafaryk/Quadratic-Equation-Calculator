@@ -62,6 +62,12 @@ def main():
         if operator_index[index][1] == '-':  # if coefficient was negative the resultant number must be too
             number = number * -1
         return number
+    
+    def proof(x):  # proof of solution
+        print('ax² + bx + c')
+        print(f"{a} * {x}² + {b} * {x} + {c}")
+        print(f'{a * x ** 2} + {b * x} + {c}')
+        print('0')
 
     isolating_equation()
     if check():
@@ -74,8 +80,8 @@ def main():
         if x2_index > operator_index[1][0]:
             if x2_index > operator_index[2][0]:
                 a = isolating_term(2, False)
-                third_term_used = True  # we have to keep track which terms are x2 and x terms,so we can deduce variable
-                # term
+                third_term_used = True  # we have to keep track which terms are x2 and x terms,so we can deduce the
+                # term of the constant
             else:
                 a = isolating_term(1, True)
                 second_term_used = True
@@ -111,27 +117,18 @@ def main():
             x2 = round((- b - (discriminant ** 0.5)) / (2 * a), 2)
             if x1 == x2:
                 print('x is ', x1)
-                print('ax² + bx + c')
-                print(f"{a} * {x1}² + {b} * {x1} + {c}")
-                print(f'{a*x1**2} + {b*x1} + {c}')
-                print('0')
+                proof(x1)
             else:
                 print('x1 is', x1)
-                print('ax² + bx + c')
-                print(f"{a} * {x1}² + {b} * {x1} + {c}")
-                print(f'{a * x1 ** 2} + {b * x1} + {c}')
-                print('0')
+                proof(x1)
                 print('x2 is', x2)
-                print('ax² + bx + c')
-                print(f"{a} * {x2}² + {b} * {x2} + {c}")
-                print(f'{a * x2 ** 2} + {b * x2} + {c}')
-                print('0')
+                proof(x2)
 
         else:
             discriminant = (discriminant * -1) ** 0.5
             print('x1 is', (-b / 2 / a), '+', discriminant / 2 / a, 'i')
             print('x2 is', (-b / 2 / a), '-', discriminant / 2 / a, 'i')
-    else:  # if check fails, reenter equation
+    else:  # if check fails, re-enter equation
         print('Enter a valid quadratic equation')
         main()
 
