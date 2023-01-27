@@ -65,8 +65,8 @@ def main():
 
     def proof(x):  # proof of solution
         print('ax² + bx + c')
-        print(f"{round(a)} * {x}² + {round(b)} * {x} + {round(c)}")
-        print(f'{round(a * x ** 2)} + {round(b * x)} + {round(c)}')
+        print(f"({a} * ({x}))² + ({b} * {x}) + ({c})")
+        print(f'({round(a * x ** 2, 4)}) + ({round(b * x, 4)}) + ({c})')
         print('0')
 
     isolating_equation()
@@ -106,11 +106,16 @@ def main():
             c = isolating_term(1, True)
         if not third_term_used:
             c = isolating_term(2, False)
+        
+        a = round(a, 4)
+        b = round(b, 4)
+        c = round(c, 4)
 
         discriminant = (b ** 2) - (4 * a * c)  # determining if real solutions, no real solutions, or one solution
         if discriminant >= 0:
-            x1 = round((- b + (discriminant ** 0.5)) / (2 * a), 4)
-            x2 = round((- b - (discriminant ** 0.5)) / (2 * a), 4)
+            z = (discriminant ** 0.5)
+            x1 = round((- b + z) / 2 / a, 4)
+            x2 = round((- b - z) / 2 / a, 4)
             if x1 == x2:
                 print('x is ', x1)
                 proof(x1)
@@ -121,7 +126,7 @@ def main():
                 proof(x2)
 
         else:
-            
+
             discriminant = round(((discriminant * -1) ** 0.5), 4)
             print('x1 is', (-b / 2 / a), '+', discriminant / 2 / a, 'i')
             print('x2 is', (-b / 2 / a), '-', discriminant / 2 / a, 'i')
