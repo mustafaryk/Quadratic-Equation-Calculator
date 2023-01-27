@@ -106,7 +106,7 @@ def main():
             c = isolating_term(1, True)
         if not third_term_used:
             c = isolating_term(2, False)
-        
+
         a = round(a, 4)
         b = round(b, 4)
         c = round(c, 4)
@@ -128,8 +128,8 @@ def main():
         else:
 
             discriminant = round(((discriminant * -1) ** 0.5), 4)
-            print('x1 is', (-b / 2 / a), '+', discriminant / 2 / a, 'i')
-            print('x2 is', (-b / 2 / a), '-', discriminant / 2 / a, 'i')
+            print('x1 is', round(-b / 2 / a, 4), '+', discriminant / 2 / a, 'i')
+            print('x2 is', round(-b / 2 / a, 4), '-', discriminant / 2 / a, 'i')
     else:  # if check fails, re-enter equation
         print('Enter a valid quadratic equation')
         main()
