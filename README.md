@@ -10,4 +10,4 @@ it can give imaginary solutions
 it has extensive failsafe measures to prevent wrong syntax equations being typed in
 HOWEVER
 it cannot input fractions
-answers are always in decimal
+inputs are always in decimal
